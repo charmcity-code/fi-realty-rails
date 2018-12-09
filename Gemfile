@@ -25,7 +25,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+gem 'chronic'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -39,6 +40,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+  gem "database_cleaner"
+  gem "rspec-rails"
+  gem "rack_session_access"
+  gem "pry"
 end
 
 group :development do
