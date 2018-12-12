@@ -1,0 +1,18 @@
+<h2>New Listing</h2>
+
+  <%= form_for @listing do |f| %>
+  <p>Address: <%= f.text_field :street %></p><br>
+    City: <%= f.text_field :city %>
+    State: <%= f.text_field :state %>
+    Zip Code: <%= f.number_field :zip_code %><br><br>
+
+    Property Type: <%= f.text_field :property_type %>
+    Number of Bedrooms: <%= f.number_field :bedrooms %>
+    Number of Bathrooms: <%= f.number_field :bathrooms %><br><br>
+
+    List Price: $ <%= f.number_field :list_price %>
+    List Date: <%= f.text_field :list_date %><br>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.submit %>
+  <% end %>
