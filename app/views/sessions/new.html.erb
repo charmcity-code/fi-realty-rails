@@ -1,0 +1,10 @@
+<h2>Login</h2>
+
+<%= form_tag(session_path) do %>
+Username: <%= text_field_tag :'user[username]' %>
+Password: <%= password_field_tag :'user[password]' %>
+
+<!-- Username: <input user[username]=username id='user_username'>
+Password: <input password=password> -->
+<%= submit_tag "Login" %>
+<% end %>
