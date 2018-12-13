@@ -1,3 +1,5 @@
+require 'chronic'
+
 class ApplicationController < ActionController::Base
 
   def logged_in?
@@ -8,9 +10,5 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   helper_method :current_user
-
-  def chronic_time(string)
-    Chronic.parse(string)
-  end
 
 end

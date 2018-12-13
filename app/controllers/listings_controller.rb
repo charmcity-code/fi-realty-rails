@@ -1,3 +1,5 @@
+require 'chronic'
+
 class ListingsController < ApplicationController
 
   def new
@@ -21,6 +23,8 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find_by(id: params[:id])
+    @chronic = Chronic.parse(@listing.list_date).strftime('%b %d, %Y')
+    # binding.pry
   end
 
   private
