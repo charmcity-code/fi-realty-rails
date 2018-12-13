@@ -8,7 +8,6 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
-    # binding.pry
 
     if @listing.save
       redirect_to listing_path(@listing)
@@ -23,8 +22,6 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find_by(id: params[:id])
-    @chronic = Chronic.parse(@listing.list_date).strftime('%b %d, %Y')
-    # binding.pry
   end
 
   private

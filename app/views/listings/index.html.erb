@@ -1,1 +1,8 @@
 <h2>Listings Index</h2>
+
+<% @listings.each do |listing| %>
+  <ul>
+    <li><%= listing.street %><br>
+    <%= Chronic.parse(listing.list_date).strftime('%b %d, %Y') %></li>
+  </ul>
+<% end %>

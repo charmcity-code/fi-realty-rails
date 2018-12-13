@@ -1,4 +1,3 @@
 <h2>Listing</h2>
 
-<%#= @listing.list_date %>
-<%= @chronic %>
+<%= Chronic.parse(@listing.list_date).strftime('%b %d, %Y')%>
