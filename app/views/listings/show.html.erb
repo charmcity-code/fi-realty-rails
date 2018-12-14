@@ -1,3 +1,5 @@
 <h2>Listing</h2>
 
+<%= number_to_currency(@listing.list_price, precision: 0) %>
+
 <%= Chronic.parse(@listing.list_date).strftime('%b %d, %Y')%>
