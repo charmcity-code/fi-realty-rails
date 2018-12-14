@@ -1,1 +1,11 @@
 <h2>Buyers Index</h2>
+
+<% @buyers.each do |buyer| %>
+  <ul>
+    <li>Name:
+      <%= buyer.name %><br>
+      Email:
+      <%= buyer.email %>
+    </li>
+  </ul>
+<% end %>
