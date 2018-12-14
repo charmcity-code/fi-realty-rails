@@ -18,6 +18,16 @@ class BuyersController < ApplicationController
     end
   end
 
+  def edit
+    @buyer = Buyer.find_by(id: params[:id])
+  end
+
+  def update
+    @buyer = Buyer.find_by(id: params[:id])
+    @buyer.update(buyer_params)
+    redirect_to buyer_path(@buyer)
+  end
+
   def show
     @buyer = Buyer.find_by(id: params[:id])
   end

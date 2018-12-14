@@ -3,12 +3,4 @@
  <p><%= link_to "Create New Buyer", new_buyer_path %></p>
 <p>or</p>
 
- <%= form_for @appointment do |f| %>
-  Select from existing buyer: <%= f.collection_select :buyer_name, Buyer.all, :name, :name %><br>
-
-  Select listing:
-  <%= f.collection_select :listing_street, Listing.all, :street, :street%><br><br>
-
-  Appointment Date: <%= f.text_field :date %><br>
-  <%= f.submit %>
-<% end %>
+<%= render 'form' %>

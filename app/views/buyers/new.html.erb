@@ -1,7 +1,3 @@
 <h2>Create Buyer</h2>
 
-<%= form_for @buyer do |f| %>
-  <p>Name: <%= f.text_field :name %></p>
-  <p>Email: <%= f.text_field :email %></p>
-  <%= f.submit %>
-<% end %>
+<%= render 'form' %>

@@ -14,6 +14,16 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def edit
+    @appointment = Appointment.find_by(id: params[:id])
+  end
+
+  def update
+    @appointment = Appointment.find_by(id: params[:id])
+    @appointment.update(appointment_params)
+    redirect_to appointment_path(@appointment)
+  end
+
   def show
     @appointment = Appointment.find_by(id: params[:id])
   end
