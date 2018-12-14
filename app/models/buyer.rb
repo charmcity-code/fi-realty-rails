@@ -3,4 +3,5 @@ class Buyer < ApplicationRecord
   has_many :listings, through: :appointments
 
   # validate unique emails
+
 end

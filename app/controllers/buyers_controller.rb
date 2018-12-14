@@ -25,6 +25,6 @@ class BuyersController < ApplicationController
   private
 
   def buyer_params
-    params.require(:buyer).permit(:first_name, :last_name, :email)
+    params.require(:buyer).permit(:name, :email)
   end
 end
