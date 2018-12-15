@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_230816) do
+ActiveRecord::Schema.define(version: 2018_12_15_013124) do
 
   create_table "appointments", force: :cascade do |t|
     t.string "date"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_12_14_230816) do
     t.string "property_type"
     t.integer "bedrooms"
     t.integer "bathrooms"
-    t.string "list_price"
+    t.integer "list_price"
     t.string "list_date"
     t.integer "user_id"
     t.datetime "created_at", null: false
