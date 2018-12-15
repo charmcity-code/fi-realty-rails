@@ -12,3 +12,5 @@ with <%= @appointment.buyer.name %><br>
 on <%= Chronic.parse(@appointment.date).strftime('%b %d, %Y')%><br>
 at <%= Chronic.parse(@appointment.date).strftime('%l:%M %p')%>
 
+<p><%= link_to 'Delete', appointment_path(@appointment), method: :delete %></p>
+

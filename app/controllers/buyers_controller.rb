@@ -34,7 +34,7 @@ class BuyersController < ApplicationController
 
   def destroy
     Buyer.find(params[:id]).destroy
-    flash[:notice] = "Buyer deleted"
+    # flash[:notice] = "Buyer deleted"
     redirect_to buyers_path
   end
 
