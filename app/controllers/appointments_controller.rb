@@ -18,6 +18,10 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find_by(id: params[:id])
   end
 
+  def index
+    @appointments = Appointment.all
+  end
+
   def update
     @appointment = Appointment.find_by(id: params[:id])
     @appointment.update(appointment_params)
@@ -26,6 +30,11 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find_by(id: params[:id])
+  end
+
+  def destroy
+    Appointment.find(params[:id]).destroy
+    redirect_to appointments_path
   end
 
    private

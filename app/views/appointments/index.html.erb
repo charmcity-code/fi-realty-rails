@@ -1,0 +1,16 @@
+<h2><%= current_user.username %>'s Appointments</h2>
+<% @appointments.each do |appointment| %>
+<ul>
+  <li>
+    Buyer: <%= appointment.buyer.name %><br>
+    Property Location:
+    <%= appointment.listing.street %><br>
+    <%= appointment.listing.city %>
+    <%= appointment.listing.state %>
+    <%= appointment.listing.zip_code %><br><br>
+
+    on <%= Chronic.parse(appointment.date).strftime('%b %d, %Y')%>
+    at <%= Chronic.parse(appointment.date).strftime('%l:%M %p')%>
+  </li>
+</ul>
+<% end %>
