@@ -1,5 +1,10 @@
 <h2>Listing</h2>
 
-<%= number_to_currency(@listing.list_price, precision: 0) %>
+Address: <%= @listing.street %><br>
+<%= @listing.city %>, <%= @listing.state %>
+<%= @listing.zip_code %><br><br>
 
-<%= Chronic.parse(@listing.list_date).strftime('%b %d, %Y')%>
+
+List Price: <%= number_to_currency(@listing.list_price, precision: 0) %>
+<br>
+Date Listed: <%= Chronic.parse(@listing.list_date).strftime('%b %d, %Y')%>
