@@ -9,6 +9,6 @@ Location: <%= @appointment.listing.street %><br>
 
 with <%= @appointment.buyer.name %><br>
 
-on: <%= Chronic.parse(@appointment.date).strftime('%b %d, %Y')%><br>
-at: <%= Chronic.parse(@appointment.date).strftime('%l:%M %p')%>
+on <%= Chronic.parse(@appointment.date).strftime('%b %d, %Y')%><br>
+at <%= Chronic.parse(@appointment.date).strftime('%l:%M %p')%>
 
