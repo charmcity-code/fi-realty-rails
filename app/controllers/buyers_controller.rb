@@ -32,6 +32,12 @@ class BuyersController < ApplicationController
     @buyer = Buyer.find_by(id: params[:id])
   end
 
+  def destroy
+    Buyer.find(params[:id]).destroy
+    flash[:notice] = "Buyer deleted"
+    redirect_to buyers_path
+  end
+
   private
 
   def buyer_params
