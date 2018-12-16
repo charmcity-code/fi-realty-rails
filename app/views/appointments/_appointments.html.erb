@@ -1,0 +1,16 @@
+    Buyer:
+    <%= a.buyer.name %><br>
+    Property Location:
+    <%= a.listing.street %><br>
+    <%= a.listing.city %>
+    <%= a.listing.state %>
+    <%= a.listing.zip_code %><br><br>
+
+    on
+    <%= Chronic.parse(a.date).strftime('%b %d, %Y')%>
+    at
+    <%= Chronic.parse(a.date).strftime('%l:%M %p')%>
+  </li>
+</ul>
+
+

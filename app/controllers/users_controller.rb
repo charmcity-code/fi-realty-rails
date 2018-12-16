@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+    @appointments = Appointment.all
   end
 
   private
