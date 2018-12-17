@@ -6,6 +6,6 @@ Address: <%= @listing.street %><br>
 
 List Price: <%= number_to_currency(@listing.list_price, precision: 0) %>
 <br>
-Date Listed: <%= Chronic.parse(@listing.list_date).strftime('%b %d, %Y')%>
+Date Listed: <%= @listing.created_at.strftime('%b %d, %Y')%>
 
 <p><%= link_to 'Delete', listing_path(@listing), method: :delete %></p>

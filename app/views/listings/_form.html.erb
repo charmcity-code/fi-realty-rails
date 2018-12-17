@@ -9,7 +9,6 @@
     Number of Bathrooms: <%= f.number_field :bathrooms %><br><br>
 
     List Price: $ <%= f.text_field :list_price %>
-    List Date: <%= f.text_field :list_date, placeholder: 'Use natural language' %><br>
 
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.submit %>
