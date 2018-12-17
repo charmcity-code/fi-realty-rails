@@ -1,5 +1,3 @@
-require 'chronic'
-
 class ListingsController < ApplicationController
 
   def new
@@ -17,7 +15,19 @@ class ListingsController < ApplicationController
   end
 
   def index
+    # provide all listings to the view for the filter control
     @listings = Listing.all
+
+    # filter the @listings based on user input
+    if !params[:list_date].blank?
+      if params[:list_date] == "Recent"
+        @listings = Listing.recent
+      else
+        @listings = Listing.older
+      end
+    else
+      @listings = Listing.all
+    end
   end
 
   def show
@@ -42,6 +52,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:street, :city, :state, :zip_code, :property_type, :bedrooms, :bathrooms, :list_price, :list_date, :user_id)
+    params.require(:listing).permit(:street, :city, :state, :zip_code, :property_type, :bedrooms, :bathrooms, :list_price, :user_id)
   end
 end

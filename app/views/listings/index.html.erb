@@ -1,8 +1,17 @@
 <h2>Listings Index</h2>
 
+<div>
+  <h4>Filter by date:</h4>
+  <%= form_tag("/listings", method: "get") do %>
+
+  <%= select_tag "list_date", options_for_select(["Recent", "Older"]), include_blank: true %>
+  <%= submit_tag "Filter" %>
+  <% end %>
+</div>
+
 <% @listings.each do |listing| %>
   <ul>
     <li><%= listing.street %><br>
-    <%= Chronic.parse(listing.list_date).strftime('%b %d, %Y') %></li>
+    <%= listing.created_at.strftime('%b %d, %Y') %></li>
   </ul>
 <% end %>
