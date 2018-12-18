@@ -3,5 +3,7 @@
 Name: <%= @buyer.name %><br>
 Email: <%= @buyer.email %>
 
+<%= link_to "New Appointment", new_buyer_appointment_path(@buyer) %>
+
 <p><%= link_to 'Delete', buyer_path(@buyer), method: :delete %></p>
 

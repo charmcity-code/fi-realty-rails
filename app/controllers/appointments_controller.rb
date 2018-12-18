@@ -1,7 +1,12 @@
 class AppointmentsController < ApplicationController
 
   def new
-    @appointment = Appointment.new
+    if params[:buyer_id] && !Buyer.exists?(params[:buyer_id])
+      redirect_to buyers_path
+      # alert: "Buyer not found."
+    else
+      @appointment = Appointment.new(buyer_id: params[:buyer_id])
+    end
   end
 
   def create
@@ -19,7 +24,11 @@ class AppointmentsController < ApplicationController
   end
 
   def index
-    @appointments = Appointment.all
+    if params[:buyer_id]
+      @appointments = Buyer.find(params[:buyer_id]).appointments
+    else
+      @appointments = Appointment.all
+    end
   end
 
   def update
@@ -40,7 +49,7 @@ class AppointmentsController < ApplicationController
    private
 
   def appointment_params
-    params.require(:appointment).permit(:buyer_name, :listing_street, :date)
+    params.require(:appointment).permit(:buyer_name, :listing_street, :date, :buyer_id)
   end
 
 end

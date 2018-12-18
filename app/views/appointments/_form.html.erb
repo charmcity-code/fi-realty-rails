@@ -1,11 +1,11 @@
 <%= form_for @appointment do |f| %>
-Select from existing buyer:
-<%= f.collection_select :buyer_name, Buyer.all, :name, :name %><br>
 
-Select listing:
-<%= f.collection_select :listing_street, Listing.all, :street, :street%><br><br>
+  <%= buyer_id_field(@appointment) %>
+  <br><br>
 
-Appointment Date:
-<%= f.text_field :date, placeholder: 'Use natural language'%><br>
-<%= f.submit %>
+  <%= f.collection_select :listing_street, Listing.all, :street, :street, :include_blank => "Select Listing"%><br><br>
+
+  Appointment Date:
+  <%= f.text_field :date, placeholder: 'Use natural language'%><br>
+  <%= f.submit %>
 <% end %>
