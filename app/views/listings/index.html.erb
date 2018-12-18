@@ -9,9 +9,15 @@
   <% end %>
 </div>
 
-<% @listings.each do |listing| %>
+<% @listings.each do |l| %>
   <ul>
-    <li><%= listing.street %><br>
-    <%= listing.created_at.strftime('%b %d, %Y') %></li>
+    <li>
+      Date Listed: <%= l.created_at.strftime('%b %d, %Y') %><br>
+      Property Location:<br>
+      <%= l.street %><br>
+      <%= l.city %>,
+      <%= l.state %>
+      <%= l.zip_code %>
+    </li>
   </ul>
 <% end %>

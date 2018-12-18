@@ -1,14 +1,14 @@
   <%= form_for @listing do |f| %>
-  <p>Address: <%= f.text_field :street %></p><br>
-    City: <%= f.text_field :city %>
-    State: <%= f.text_field :state %>
+    Address: <%= f.text_field :street %><br>
+    City: <%= f.text_field :city %><br>
+    State: <%= f.text_field :state %><br>
     Zip Code: <%= f.text_field :zip_code %><br><br>
 
-    Property Type: <%= f.text_field :property_type %>
-    Number of Bedrooms: <%= f.number_field :bedrooms %>
+    Property Type: <%= f.text_field :property_type %><br>
+    Number of Bedrooms: <%= f.number_field :bedrooms %><br>
     Number of Bathrooms: <%= f.number_field :bathrooms %><br><br>
 
-    List Price: $ <%= f.text_field :list_price %>
+    List Price: $ <%= f.text_field :list_price %><br><br>
 
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.submit %>

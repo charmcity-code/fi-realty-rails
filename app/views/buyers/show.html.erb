@@ -1,7 +1,9 @@
-<h2>Buyer Info</h2>
+<h2>Buyer Details</h2>
 
 Name: <%= @buyer.name %><br>
-Email: <%= @buyer.email %>
+Email: <%= @buyer.email %><br>
+
+<p><%= link_to "Show Appointments", buyer_appointments_path(@buyer) %></p>
 
 <%= link_to "New Appointment", new_buyer_appointment_path(@buyer) %>
 

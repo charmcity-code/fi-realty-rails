@@ -6,6 +6,6 @@
   <%= f.collection_select :listing_street, Listing.all, :street, :street, :include_blank => "Select Listing"%><br><br>
 
   Appointment Date:
-  <%= f.text_field :date, placeholder: 'Use natural language'%><br>
+  <%= f.text_field :date, placeholder: 'Use natural language'%><br><br>
   <%= f.submit %>
 <% end %>

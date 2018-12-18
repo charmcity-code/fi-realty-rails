@@ -1,11 +1,18 @@
-<h2>Listing</h2>
+<h2>Listing Details</h2>
 
-Address: <%= @listing.street %><br>
-<%= @listing.city %>, <%= @listing.state %>
+Date Listed: <%= @listing.created_at.strftime('%b %d, %Y')%><br>
+
+Property Location:<br>
+<%= @listing.street %><br>
+<%= @listing.city %>,
+<%= @listing.state %>
 <%= @listing.zip_code %><br><br>
+
+Property Type: <%= @listing.property_type %><br>
+Number of Bedrooms: <%= @listing.bedrooms %><br>
+Number of Bathrooms: <%= @listing.bathrooms %><br><br>
 
 List Price: <%= number_to_currency(@listing.list_price, precision: 0) %>
 <br>
-Date Listed: <%= @listing.created_at.strftime('%b %d, %Y')%>
 
 <p><%= link_to 'Delete', listing_path(@listing), method: :delete %></p>

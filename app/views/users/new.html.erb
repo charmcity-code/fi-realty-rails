@@ -1,7 +1,7 @@
-<h2>Create User/Realtor</h2>
+<h2>Create New Realtor</h2>
 
 <%= form_for @user do |f| %>
-  Username: <%= f.text_field :username %>
-  Password: <%= f.password_field :password %>
-  <%= f.submit %>
+  <p>Username: <%= f.text_field :username %></p>
+  <p>Password: <%= f.password_field :password %></p>
+  <%= f.submit "Create Realtor" %>
 <% end %>
