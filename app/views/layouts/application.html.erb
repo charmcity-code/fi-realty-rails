@@ -54,11 +54,25 @@
               <a class="dropdown-item" href="<%= buyers_url %>">View Buyers</a>
             </div>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
-          <li class="nav-item"><a class="nav-link" href="#"><%= current_user.username %></a></li>
+
+          <% if logged_in? %>
+            <li class="nav-item"><a class="nav-link" href="<%= user_url(current_user.id) %>">Hello,
+              <%= current_user.username %>!</a></li>
+
+           <li class="nav-item"><a class="nav-link" data-method="delete" href="<%= logout_path %>">Logout</a></li>
+
+          <% else %>
+            <li class="nav-item"><a class="nav-link" href="<%= signup_path %>">Sign Up</a></li>
+
+            <li class="nav-item"><a class="nav-link" href="<%= login_path %>">Log In</a></li>
+
+          <% end %>
+
         </ul>
       </div>
     </nav>
+
+    <%= flash[:message] if flash[:message] %>
 
     <%= yield %>
   </body>
