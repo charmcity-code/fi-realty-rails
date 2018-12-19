@@ -8,4 +8,12 @@ module AppointmentsHelper
       hidden_field_tag "appointment[buyer_id]", appointment.buyer_id
     end
   end
+
+  def parsed_date(appointment)
+    appointment.date.strftime('%b %d, %Y')
+  end
+
+  def localtime(appointment)
+    local_time(appointment.date, '%l:%M %p')
+  end
 end

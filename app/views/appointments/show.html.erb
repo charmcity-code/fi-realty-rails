@@ -1,16 +1,16 @@
-<h2>Appointment</h2>
+<h2>Appointment Details</h2>
 
-Realtor: <%= current_user.username %><br><br>
+Realtor: <%= current_user.username %><br>
+Buyer: <%= @appointment.buyer.name %><br><br>
 
-Location: <%= @appointment.listing.street %><br>
-<%= @appointment.listing.city %>
+Property Location:<br>
+<%= @appointment.listing.street %><br>
+<%= @appointment.listing.city %>,
 <%= @appointment.listing.state %>
 <%= @appointment.listing.zip_code %><br><br>
 
-with <%= @appointment.buyer.name %><br>
-
-on <%= Chronic.parse(@appointment.date).strftime('%b %d, %Y')%><br>
-at <%= Chronic.parse(@appointment.date).strftime('%l:%M %p')%>
+Date: <%= parsed_date @appointment %>
+at <%= localtime @appointment %>
 
 <p><%= link_to 'Delete', appointment_path(@appointment), method: :delete %></p>
 

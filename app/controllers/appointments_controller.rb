@@ -10,6 +10,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
+    params[:appointment][:date] = Chronic.parse(params[:appointment][:date])
     @appointment = Appointment.new(appointment_params)
 
     if @appointment.save

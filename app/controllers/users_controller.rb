@@ -17,8 +17,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    @appointments = Appointment.all
-    # binding.pry
+    @appointments = Appointment.order('date ASC').limit(3)
   end
 
   private
