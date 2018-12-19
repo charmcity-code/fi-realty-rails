@@ -11,5 +11,3 @@ Welcome <%= @user.username %>!
         <%= render partial: 'appointments/appointments', locals: {a: a} %>
   <% end %>
 <% end %>
-
-<br><%= link_to "Log Out", logout_path, method: :post %>
