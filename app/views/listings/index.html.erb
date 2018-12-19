@@ -1,7 +1,7 @@
-<h2>Listings Index</h2>
+<h4>Listings Index</h4>
 
 <div>
-  <h4>Filter by date:</h4>
+  <h6>Filter by date:</h6>
   <%= form_tag("/listings", method: "get") do %>
 
   <%= select_tag "list_date", options_for_select(["Recent", "Older"]), include_blank: true %>
@@ -17,7 +17,8 @@
       <%= l.street %><br>
       <%= l.city %>,
       <%= l.state %>
-      <%= l.zip_code %>
+      <%= l.zip_code %><br>
+      <%= link_to "Details", listing_path(l) %>
     </li>
   </ul>
 <% end %>

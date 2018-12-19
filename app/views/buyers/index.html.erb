@@ -1,11 +1,12 @@
-<h2>Buyers Index</h2>
+<h4>Buyers Index</h4>
 
 <% @buyers.each do |b| %>
   <ul>
     <li>Name:
       <%= b.name %><br>
       Email:
-      <%= b.email %>
+      <%= b.email %><br>
+      <%= link_to "Details", buyer_path(b) %>
     </li>
   </ul>
 <% end %>

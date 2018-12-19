@@ -1,8 +1,8 @@
-<h2>Realtor Details</h2>
+<h4>Realtor Details</h4>
 
 Welcome <%= @user.username %>!
 
-<h3>Your Upcoming Appointments:</h3>
+<h5>Your Upcoming Appointments:</h5>
 
 <% @appointments.each do |a| %>
   <% if a.listing.user.id == current_user.id %>
