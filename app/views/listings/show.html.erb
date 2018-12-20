@@ -1,6 +1,6 @@
 <h4>Listing Details</h4>
 
-Date Listed: <%= @listing.created_at.strftime('%b %d, %Y')%><br><br>
+Date Listed: <%= localdate @listing %><br><br>
 
 Property Location:<br>
 <%= @listing.street %><br>

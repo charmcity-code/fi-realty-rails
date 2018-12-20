@@ -12,7 +12,7 @@
 <% @listings.each do |l| %>
   <ul>
     <li>
-      Date Listed: <%= l.created_at.strftime('%b %d, %Y') %><br>
+      Date Listed: <%= localdate l %><br>
       Property Location:<br>
       <%= l.street %><br>
       <%= l.city %>,
