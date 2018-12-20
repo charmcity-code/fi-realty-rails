@@ -1,10 +1,12 @@
 <h4>Sign up</h4>
 
-<% if @user.errors %>
-  <% @user.errors.full_messages.each do |error| %>
-    <%= error %>
+<div class="errors">
+  <% if @user.errors %>
+    <% @user.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
 <%= form_for @user do |f| %>
   <%= f.label :username %>

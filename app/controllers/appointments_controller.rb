@@ -3,7 +3,6 @@ class AppointmentsController < ApplicationController
   def new
     if params[:buyer_id] && !Buyer.exists?(params[:buyer_id])
       redirect_to buyers_path
-      # alert: "Buyer not found."
     else
       @appointment = Appointment.new(buyer_id: params[:buyer_id])
     end
@@ -16,7 +15,8 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       redirect_to appointment_path(@appointment)
     else
-      render new_appointment_path
+      flash[:message] = "Something went wrong."
+      redirect_to new_appointment_path
     end
   end
 

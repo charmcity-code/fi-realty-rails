@@ -2,6 +2,8 @@ class Appointment < ApplicationRecord
   belongs_to :buyer
   belongs_to :listing
 
+  validates :date, presence: true
+
   def buyer_name=(name)
     self.buyer = Buyer.find_or_create_by(name: name)
   end
