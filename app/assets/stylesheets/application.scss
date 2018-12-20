@@ -33,3 +33,15 @@
   text-align: center;
 }
 
+.errors {
+  color: red;
+  animation: cssAnimation 0s 5s forwards;
+  visibility: visible;
+}
+
+@keyframes cssAnimation {
+  to {
+    visibility: hidden;
+  }
+}
+

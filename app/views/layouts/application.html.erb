@@ -20,9 +20,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <!-- <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
+          </li> -->
+
+          <% if logged_in? %>
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
@@ -55,16 +57,16 @@
             </div>
           </li>
 
-          <% if logged_in? %>
-            <li class="nav-item"><a class="nav-link" href="<%= user_url(current_user.id) %>">Hello,
+
+          <li class="nav-item"><a class="nav-link" href="<%= user_url(current_user.id) %>">Hello,
               <%= current_user.username %>!</a></li>
 
-           <li class="nav-item"><a class="nav-link" data-method="delete" href="<%= logout_path %>">Logout</a></li>
+          <li class="nav-item"><a class="nav-link" data-method="delete" href="<%= logout_path %>">Logout</a></li>
 
           <% else %>
-            <li class="nav-item"><a class="nav-link" href="<%= signup_path %>">Sign Up</a></li>
+          <li class="nav-item"><a class="nav-link" href="<%= signup_path %>">Sign Up</a></li>
 
-            <li class="nav-item"><a class="nav-link" href="<%= login_path %>">Log In</a></li>
+          <li class="nav-item"><a class="nav-link" href="<%= login_path %>">Log In</a></li>
 
           <% end %>
 
@@ -72,7 +74,7 @@
       </div>
     </nav>
 
-    <%= flash[:message] if flash[:message] %>
+    <div class="errors"><%= flash[:message] if flash[:message] %></div>
 
     <%= yield %>
   </body>
