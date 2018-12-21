@@ -15,7 +15,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       redirect_to appointment_path(@appointment)
     else
-      flash[:message] = "Something went wrong."
+      flash[:message] = "Oops! Something went wrong."
       redirect_to new_appointment_path
     end
   end
@@ -26,9 +26,9 @@ class AppointmentsController < ApplicationController
 
   def index
     if params[:buyer_id]
-      @appointments = Buyer.find(params[:buyer_id]).appointments
+      @appointments = Buyer.find(params[:buyer_id]).appointments.order('date ASC')
     else
-      @appointments = Appointment.all
+      @appointments = Appointment.order('date ASC')
     end
   end
 
