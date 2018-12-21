@@ -45,6 +45,7 @@ class AppointmentsController < ApplicationController
 
   def destroy
     Appointment.find(params[:id]).destroy
+    flash[:notice] = "Appointment deleted"
     redirect_to appointments_path
   end
 
