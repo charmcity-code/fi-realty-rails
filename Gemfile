@@ -30,6 +30,9 @@ gem 'chronic'
 gem 'local_time'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'dotenv-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

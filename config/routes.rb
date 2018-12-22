@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
+  get '/auth/:github/callback' => 'sessions#create'
 
   delete '/logout' => 'sessions#destroy'
 
