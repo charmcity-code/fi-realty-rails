@@ -3,7 +3,7 @@
 <% @appointments.each do |a| %>
 <ul>
   <li>
-    Retailer:
+    Realtor:
     <%= a.listing.user.email %><br>
     <%= render partial: 'appointments', locals: {a: a} %>
     <% end %>
