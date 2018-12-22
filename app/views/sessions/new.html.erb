@@ -1,10 +1,12 @@
 <h4>Login</h4>
 
 <%= form_tag(login_path) do %>
-<%= label_tag :username %>
-<div><%= text_field_tag :'user[username]' %></div>
+<%= label_tag :email %>
+<div><%= text_field_tag :'user[email]' %></div>
 <%= label_tag :password %>
 <div><%= password_field_tag :'user[password]' %></div>
 <br>
 <%= submit_tag "Submit" %>
 <% end %>
+
+<%= link_to "Login via Github", "/auth/github" %>
