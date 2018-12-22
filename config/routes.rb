@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
 
   resources :listings
-  resources :users
-  # no user index
+  resources :users, only: [:new, :create, :show]
 
   resources :buyers do
     resources :appointments, only: [:index, :new]
