@@ -11,11 +11,11 @@ class Listing < ApplicationRecord
 
 
 	def self.recent
-  	where("created_at >=?", Time.zone.today.beginning_of_day - 3.day)
+  	where("created_at >=?", Time.zone.today.beginning_of_day)
 	end
 
 	def self.older
-  	where("created_at <?", Time.zone.today.beginning_of_day - 3.day)
+  	where("created_at <?", Time.zone.today.beginning_of_day)
 	end
 
 end
