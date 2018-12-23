@@ -2,24 +2,24 @@
 
 <div>
   <h6>Filter by date:</h6>
-  <%= form_tag("/listings", method: "get") do %>
 
-  <%= select_tag "list_date", options_for_select(["Recent", "Older"]), include_blank: true %>
-  <%= submit_tag "Filter" %>
+  <%= form_tag("/listings", method: "get") do %>
+    <%= select_tag "list_date", options_for_select(["Recent", "Older"]), include_blank: true %>
+    <%= submit_tag "Filter" %>
   <% end %>
 </div>
 
 <% @listings.each do |l| %>
-<ul>
-  <li>
-    Date Listed:
-    <%= localdate l %><br>
-    Property Location:<br>
-    <%= l.street %><br>
-    <%= l.city %>,
-    <%= l.state %>
-    <%= l.zip_code %><br>
-    <%= link_to "Details", listing_path(l) %>
-  </li>
-</ul>
+  <ul>
+    <li>
+      Date Listed:
+      <%= localdate l %><br>
+      Property Location:<br>
+      <%= l.street %><br>
+      <%= l.city %>,
+      <%= l.state %>
+      <%= l.zip_code %><br>
+      <%= link_to "Details", listing_path(l) %>
+    </li>
+  </ul>
 <% end %>

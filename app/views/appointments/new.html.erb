@@ -2,12 +2,12 @@
 
 <%= form_for @appointment do |f| %>
 
-<%= buyer_id_field(@appointment) %>
-<br><br>
+  <%= buyer_id_field(@appointment) %>
+  <br><br>
 
-<%= f.collection_select :listing_street, Listing.all, :street, :street, :include_blank => "Select Listing"%><br><br>
+  <%= f.collection_select :listing_street, Listing.all, :street, :street, :include_blank => "Select Listing"%><br><br>
 
-Appointment Date:
-<%= f.text_field :date, placeholder: 'Use natural language'%><br><br>
-<%= f.submit %>
+  Appointment Date:
+  <%= f.text_field :date, placeholder: 'Use natural language'%><br><br>
+  <%= f.submit %>
 <% end %>

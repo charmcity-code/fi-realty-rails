@@ -20,9 +20,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <!-- <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li> -->
 
           <% if logged_in? %>
 
@@ -56,7 +53,6 @@
               <a class="dropdown-item" href="<%= buyers_url %>">View Buyers</a>
             </div>
           </li>
-
 
           <li class="nav-item"><a class="nav-link" href="<%= user_url(current_user.id) %>">
               <%= current_user.email %></a></li>
