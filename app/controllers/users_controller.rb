@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # show only apppointments for current user
     @user = User.find_by(id: params[:id])
     @appointments = Appointment.order('date ASC')
   end

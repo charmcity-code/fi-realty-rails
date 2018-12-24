@@ -4,6 +4,8 @@ class Appointment < ApplicationRecord
 
   validates :date, presence: true
 
+  #custom setters and getters (convenience attributes on models)
+
   def buyer_name=(name)
     self.buyer = Buyer.find_or_create_by(name: name)
   end

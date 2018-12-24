@@ -1,6 +1,7 @@
 <h4>Your Upcoming Appointments:</h4>
 
 <% @appointments.each do |a| %>
+  <!-- show only apppointments for current user -->
   <% if a.listing.user.id == current_user.id %>
     <ul>
       <li>

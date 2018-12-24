@@ -3,6 +3,7 @@
 <div>
   <h6>Filter by date:</h6>
 
+  <!-- displays select control with listings and filter -->
   <%= form_tag("/listings", method: "get") do %>
     <%= select_tag "list_date", options_for_select(["Recent", "Older"]), include_blank: true %>
     <%= submit_tag "Filter" %>

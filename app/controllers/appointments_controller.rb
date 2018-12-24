@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
 
   def new
+    #check for params[:buyer_id] and then for Buyer.exists? to see if the buyer is real
     if params[:buyer_id] && !Buyer.exists?(params[:buyer_id])
       redirect_to buyers_path
     else
@@ -9,6 +10,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
+    # convert params[:appointment][:date] into Ruby date/time
     params[:appointment][:date] = Chronic.parse(params[:appointment][:date])
     @appointment = Appointment.new(appointment_params)
 
@@ -25,14 +27,17 @@ class AppointmentsController < ApplicationController
   end
 
   def index
+    # access index of all appointments for a certain buyer
     if params[:buyer_id]
       @appointments = Buyer.find(params[:buyer_id]).appointments.order('date ASC')
     else
+      # access the index of all appointments, order by date ascending
       @appointments = Appointment.order('date ASC')
     end
   end
 
   def update
+    # convert params[:appointment][:date] into Ruby date/time
     params[:appointment][:date] = Chronic.parse(params[:appointment][:date])
     @appointment = Appointment.find_by(id: params[:id])
     @appointment.update(appointment_params)

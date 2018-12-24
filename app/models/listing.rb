@@ -10,6 +10,7 @@ class Listing < ApplicationRecord
 	validates :list_price, presence: true
 
 
+	# filters listings based on date created
 	def self.recent
   	where("created_at >=?", Time.zone.today.beginning_of_day)
 	end
