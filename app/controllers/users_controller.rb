@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    @appointments = Appointment.order('date ASC').limit(3)
+    @appointments = Appointment.order('date ASC')
   end
 
   private
