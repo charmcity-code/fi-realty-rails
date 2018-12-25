@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
 
   def new
+    # nested routes - create a new appointment for a valid buyer
     #check for params[:buyer_id] and then for Buyer.exists? to see if the buyer is real
     if params[:buyer_id] && !Buyer.exists?(params[:buyer_id])
       redirect_to buyers_path
