@@ -58,7 +58,7 @@ class AppointmentsController < ApplicationController
    private
 
   def appointment_params
-    params.require(:appointment).permit(:buyer_name, :listing_street, :date, :buyer_id)
+    params.require(:appointment).permit(:listing_street, :date, :buyer_id)
   end
 
 end
