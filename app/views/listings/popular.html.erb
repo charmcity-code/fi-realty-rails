@@ -1,0 +1,9 @@
+<!-- add most popular listing by appointments
+not finished yet -->
+
+<h4>Popular Listings</h4>
+
+<% @listings.each do |l| %>
+  <%= l.street %>
+  <%= l.appointments.count %>
+<% end %>

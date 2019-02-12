@@ -50,6 +50,10 @@ class ListingsController < ApplicationController
     redirect_to listings_path
   end
 
+  def popular
+    @listings = Listing.all
+  end
+
   private
 
   def listing_params
