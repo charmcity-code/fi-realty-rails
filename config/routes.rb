@@ -11,8 +11,6 @@ Rails.application.routes.draw do
 
   resources :appointments
 
-  get '/popular' => 'listings#popular'
-
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
 
